@@ -14,7 +14,7 @@ public class PatientController {
     @Autowired
     private PatientRepository patientRepository;  //inject repository
 
-    //add save method
+    //save a new patient
     @PostMapping("/addPatient")
     public String savePatient(@RequestBody Patient patient){
         patientRepository.save(patient);
@@ -28,7 +28,7 @@ public class PatientController {
     }
 
     //get patient by id
-    @GetMapping("/findPatientByid/{}id")
+    @GetMapping("/findPatientByid/{id}")
     public Optional<Patient> getPatient(@PathVariable String id){
         return patientRepository.findById(id);
     }
