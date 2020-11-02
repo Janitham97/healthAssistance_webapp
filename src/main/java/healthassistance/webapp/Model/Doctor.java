@@ -10,7 +10,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Setter
 @ToString
 
-@Document(collection = "users")
+@Document(collection = "doctors")
 public class Doctor {
     @Id
     private String id;
