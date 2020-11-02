@@ -34,7 +34,7 @@ public class PatientController {
     }
 
     //delete patient
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/deletepatient/{id}")
     public String deletePatient(@PathVariable String id){
         patientRepository.deleteById(id);
         return "Patient deleted with id";
