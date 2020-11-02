@@ -2,6 +2,7 @@ package healthassistance.webapp.Controller;
 
 import healthassistance.webapp.Model.Doctor;
 import healthassistance.webapp.Repository.DoctorRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,11 +11,12 @@ import java.util.Optional;
 @RestController
 public class DoctorController {
 
+    @Autowired
     private DoctorRepository doctorRepository;
 
     //save a new doctor
     @PostMapping("/addDoctor")
-    public String saveDoctor(Doctor doctor){
+    public String saveDoctor(@RequestBody Doctor doctor){
         doctorRepository.save(doctor);
         return "Doctor details saved, id:"+doctor.getId();
     }
