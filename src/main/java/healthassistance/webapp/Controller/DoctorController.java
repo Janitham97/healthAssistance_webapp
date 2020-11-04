@@ -22,15 +22,15 @@ public class DoctorController {
     @PostMapping("/addDoctor")
     public String saveDoctor(@RequestBody Doctor doctor) throws Exception{
         //check if doctor  already present in the database
-        String tempNIC = doctor.getNIC();
+        String tempNIC = doctor.getNic();
         if (tempNIC != null && !"".equals(tempNIC) ){
-           Doctor doctor1= registrationService.fetchByNIC(tempNIC);
+           Doctor doctor1= registrationService.fetchByNic(tempNIC);
            if (doctor1 != null){
                throw new Exception("Doctor with"+tempNIC+"is already exist");
            }
         }
         doctorRepository.save(doctor);
-        return "Doctor details saved, id:"+doctor.getId();
+        return "Doctor details saved, id is :"+doctor.getId();
     }
 
     //get all doctors

@@ -22,9 +22,9 @@ public class PatientController {
     @PostMapping("/addPatient")
     public String savePatient(@RequestBody Patient patient) throws Exception {
         //check if patient  already present in the database
-        String tempNIC = patient.getNIC();
+        String tempNIC = patient.getNic();
         if (tempNIC != null && !"".equals(tempNIC)) {
-            Patient patient1 = registrationService.fetchBYNIC(tempNIC);
+            Patient patient1 = registrationService.fetchByNIC(tempNIC);
             if (patient1 != null) {
                 throw new Exception("Patient with" + tempNIC + "is already exist");
             }

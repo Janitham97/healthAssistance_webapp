@@ -17,13 +17,13 @@ public class RegistrationService {
 
 
     //find a doctor by NIC
-    public Doctor fetchByNIC(String NIC){
-        return doctorRepository.findByNIC(NIC);
+    public Doctor fetchByNic(String nic){
+        return doctorRepository.findByNic(nic);
     }
 
     //find a patient by NIC
-    public Patient fetchBYNIC(String NIC){
-        return patientRepository.findByNIC(NIC);
+    public Patient fetchByNIC(String nic){
+        return patientRepository.findByNic(nic);
     }
 
 }

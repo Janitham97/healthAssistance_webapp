@@ -14,9 +14,9 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Patient {
     @Id
     private String id;
-    private String firstName;
-    private String lastName;
-    private String NIC;
+    private String firstname;
+    private String lastname;
+    private String nic;
     private String location;
     private String password;
 
