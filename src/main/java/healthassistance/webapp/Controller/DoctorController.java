@@ -2,6 +2,7 @@ package healthassistance.webapp.Controller;
 
 import healthassistance.webapp.Model.Doctor;
 import healthassistance.webapp.Repository.DoctorRepository;
+import healthassistance.webapp.Service.RegistrationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,9 +15,20 @@ public class DoctorController {
     @Autowired
     private DoctorRepository doctorRepository;
 
+    @Autowired
+    private RegistrationService registrationService;
+
     //save a new doctor
     @PostMapping("/addDoctor")
-    public String saveDoctor(@RequestBody Doctor doctor){
+    public String saveDoctor(@RequestBody Doctor doctor) throws Exception{
+        //check if user already present
+        String tempNIC = doctor.getNIC();
+        if (tempNIC != null && !"".equals(tempNIC) ){
+           Doctor doctor1= registrationService.fetchByNIC(tempNIC);
+           if (doctor1 != null){
+               throw new Exception("Doctor with"+tempNIC+"is already exist");
+           }
+        }
         doctorRepository.save(doctor);
         return "Doctor details saved, id:"+doctor.getId();
     }
@@ -24,7 +36,7 @@ public class DoctorController {
     //get all doctors
     @GetMapping("/getAllDoctors")
     public List<Doctor> getDoctors(){
-        return doctorRepository.findAll();
+         return doctorRepository.findAll();
     }
 
     //get doctor by id

@@ -18,4 +18,5 @@ public class Doctor {
     private String lastName;
     private String NIC;
     private String location;
+    private String password;
 }

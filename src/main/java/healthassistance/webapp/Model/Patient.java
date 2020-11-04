@@ -18,5 +18,6 @@ public class Patient {
     private String lastName;
     private String NIC;
     private String location;
+    private String password;
 
 }
