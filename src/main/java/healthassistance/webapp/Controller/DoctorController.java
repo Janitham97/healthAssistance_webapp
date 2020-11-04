@@ -21,7 +21,7 @@ public class DoctorController {
     //save a new doctor
     @PostMapping("/addDoctor")
     public String saveDoctor(@RequestBody Doctor doctor) throws Exception{
-        //check if user already present
+        //check if doctor  already present in the database
         String tempNIC = doctor.getNIC();
         if (tempNIC != null && !"".equals(tempNIC) ){
            Doctor doctor1= registrationService.fetchByNIC(tempNIC);
