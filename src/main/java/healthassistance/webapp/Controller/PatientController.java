@@ -1,5 +1,4 @@
 package healthassistance.webapp.Controller;
-
 import healthassistance.webapp.Model.Patient;
 import healthassistance.webapp.Repository.PatientRepository;
 import healthassistance.webapp.Service.RegistrationService;
@@ -32,6 +31,25 @@ public class PatientController {
         patientRepository.save(patient);
         return "Add a Patient with id" + patient.getId();
     }
+
+    //Patient login check
+    @PostMapping("/patientLogin")
+    public Patient patientLogin(@RequestBody Patient patient) throws Exception {
+        //check login data
+        String tempNic = patient.getNic();
+        String tempPassword = patient.getPassword();
+        Patient patient1 = null;
+        if (tempNic != null && tempPassword != null){
+            patient1 = registrationService.fetchByNicANDpassword(tempNic,tempPassword);
+        }
+        if (patient1 == null){
+            throw new Exception("Bad creditional");
+        }
+        return patient1;
+    }
+
+
+
 
     //get all patients method
     @GetMapping("/findAllPatients")

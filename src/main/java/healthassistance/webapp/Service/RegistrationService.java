@@ -32,4 +32,9 @@ public class RegistrationService {
         return doctorRepository.findByNicAndPassword(nic,password);
     }
 
+    //login service for patient
+    public Patient fetchByNicANDpassword(String nic,String password){
+        return patientRepository.findByNicAndPassword(nic,password);
+    }
+
 }
