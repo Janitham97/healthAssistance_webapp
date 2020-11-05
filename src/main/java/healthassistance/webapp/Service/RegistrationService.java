@@ -7,6 +7,7 @@ import healthassistance.webapp.Repository.PatientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
 @Service
 public class RegistrationService {
 
@@ -24,6 +25,11 @@ public class RegistrationService {
     //find a patient by NIC
     public Patient fetchByNIC(String nic){
         return patientRepository.findByNic(nic);
+    }
+
+    //login service for doctor
+    public Doctor fetchByNicAndPassword(String nic,String password){
+        return doctorRepository.findByNicAndPassword(nic,password);
     }
 
 }
