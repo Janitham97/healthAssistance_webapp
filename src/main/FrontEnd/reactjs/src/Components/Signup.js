@@ -9,33 +9,31 @@ class Signup extends Component{
 
                 <Container>
                     <CardDeck>
-                        <Card style={{ width: '18rem' }}>
+                        <Card border="success" style={{ width: '18rem' }}>
 
                             <Card.Body>
-                                <Card.Title>Card Title</Card.Title>
+                                <Card.Title>New Doctor</Card.Title>
                                 <Card.Text>
-                                    Some quick example text to build on the card title and make up the bulk of
-                                    the card's content.
+                                   Looking for a signup to brand new system
+                                    let's take a bit time and register for the system.
                                 </Card.Text>
-                                <Button variant="primary">Go somewhere</Button>
+                                <br/>
+                                <Button variant="success">Signup as Doctor</Button>
                             </Card.Body>
-                            <Card.Footer>
-                                <small className="text-muted">Last updated 3 mins ago</small>
-                            </Card.Footer>
+
                         </Card>
-                        <Card style={{ width: '18rem' }}>
+                        <Card border="info" style={{ width: '18rem' }}>
 
                             <Card.Body>
-                                <Card.Title>Card Title</Card.Title>
+                                <Card.Title>New Patient</Card.Title>
                                 <Card.Text>
-                                    Some quick example text to build on the card title and make up the bulk of
-                                    the card's content.
+                                    Looking for a signup to brand new system
+                                    let's take a bit time and register for the system.
                                 </Card.Text>
-                                <Button variant="primary">Go somewhere</Button>
+                                <br/>
+                                <Button variant="info">Signup as Patient</Button>
                             </Card.Body>
-                            <Card.Footer>
-                                <small className="text-muted">Last updated 3 mins ago</small>
-                            </Card.Footer>
+
                         </Card>
                     </CardDeck>
                 </Container>
