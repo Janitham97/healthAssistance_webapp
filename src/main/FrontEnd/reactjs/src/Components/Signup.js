@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import {Row,Col,Card,Button,CardGroup,CardDeck,Container} from "react-bootstrap";
+import {Link} from "react-router-dom";
 
 
 class Signup extends Component{
@@ -18,7 +19,7 @@ class Signup extends Component{
                                     let's take a bit time and register for the system.
                                 </Card.Text>
                                 <br/>
-                                <Button variant="success">Signup as Doctor</Button>
+                                <Button as={Link} to="/signupDoc" variant="success">Signup as Doctor</Button>
                             </Card.Body>
 
                         </Card>
@@ -31,7 +32,7 @@ class Signup extends Component{
                                     let's take a bit time and register for the system.
                                 </Card.Text>
                                 <br/>
-                                <Button variant="info">Signup as Patient</Button>
+                                <Button as={Link} to="/signupPatient" variant="info">Signup as Patient</Button>
                             </Card.Body>
 
                         </Card>
