@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {Button, Card, CardDeck, Container} from "react-bootstrap";
-
+import {Link} from "react-router-dom";
 
 
 class Login extends Component{
@@ -10,7 +10,6 @@ class Login extends Component{
                 <Container>
                     <CardDeck>
                         <Card border="success" style={{ width: '18rem' }}>
-
                             <Card.Body>
                                 <Card.Title>Exist Doctor</Card.Title>
                                 <br/>
@@ -19,7 +18,6 @@ class Login extends Component{
                                     let's login for use the system
                                 </Card.Text>
                                 <br/>
-
                                 <Button variant="success">Login as Doctor</Button>
                             </Card.Body>
 
