@@ -18,7 +18,7 @@ class Login extends Component{
                                     let's login for use the system
                                 </Card.Text>
                                 <br/>
-                                <Button variant="success">Login as Doctor</Button>
+                                <Button as={Link} to="/login" variant="success">Login as Doctor</Button>
                             </Card.Body>
 
                         </Card>
@@ -33,7 +33,7 @@ class Login extends Component{
                                 </Card.Text>
                                 <br/>
 
-                                <Button variant="info">Login as Patient</Button>
+                                <Button  as={Link} to="/login" variant="info">Login as Patient</Button>
                             </Card.Body>
 
                         </Card>

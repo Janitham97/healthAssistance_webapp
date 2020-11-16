@@ -6,22 +6,15 @@ import {BrowserRouter as Router,Switch,Route} from 'react-router-dom';
 import {Container} from "react-bootstrap";
 import LoginForum from "./Components/LoginForum";
 import SignupFourm from "./Components/SignupFourm";
+import Home from "./Components/Home";
 
 function App() {
   return (
     <Router>
         <NavigationBar/>
-        <Container>
-            <br/>
-            <br/>
-            <br/>
-            <Signup/>
-            <br/>
-            <br/>
-            <Login/>
-        </Container>
             <Switch>
-                <Route path="/home"  exact component={SignupFourm}/>
+                <Route path="/" exact component={Home}/>
+                <Route path="/signup"  exact component={SignupFourm}/>
                 <Route path="/login" exact component={LoginForum}/>
             </Switch>
 

@@ -1,10 +1,14 @@
 import React, {Component} from "react";
-import {Form,Button} from "react-bootstrap";
+import {Form, Button, Container, Card} from "react-bootstrap";
 
 class LoginForum extends Component{
     render() {
         return(
             <div>
+                <br/>
+                <Container>
+               <Card style={{ width: '18rem' }}>
+                   <Card.Body>
                 <Form>
                     <Form.Group controlId="formBasicEmail">
                         <Form.Label>Email address</Form.Label>
@@ -25,6 +29,9 @@ class LoginForum extends Component{
                         Submit
                     </Button>
                 </Form>
+                   </Card.Body>
+                </Card>
+                </Container>
             </div>
         );
     }
