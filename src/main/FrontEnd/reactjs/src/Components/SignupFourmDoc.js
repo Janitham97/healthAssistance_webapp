@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import {Button, Card, Col, Container, Form, Row} from "react-bootstrap";
 import {Link} from "react-router-dom";
 
+
 class SignupFourmDoc extends Component{
 
     render() {
@@ -15,11 +16,17 @@ class SignupFourmDoc extends Component{
                         <Col></Col>
                         <Col><Card style={{ width: '30rem' }}>
                             <Card.Body>
-                                <Form onSubmit={this.submitDoc} id="DocRegForm">
+                                <Form onSubmit={this.onSubmit} id="DocRegForm">
                                     <Form.Row>
                                         <Form.Group as={Col} controlId="formfirstname">
                                             <Form.Label>First Name</Form.Label>
-                                            <Form.Control required type="test" name="fisrtname" value={this.state.firstname} onChange={this.docChange} placeholder="Enter First Name" />
+                                            <Form.Control
+                                                required
+                                                type="test"
+                                                name="firstname"
+                                                placeholder="Enter First Name"
+                                                onChange={this.changeHandler}
+                                            />
                                         </Form.Group>
 
                                         <Form.Group as={Col} controlId="formlastname">

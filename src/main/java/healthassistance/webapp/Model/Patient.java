@@ -6,6 +6,8 @@ import lombok.ToString;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import javax.persistence.GeneratedValue;
+
 @Getter
 @Setter
 @ToString
@@ -13,6 +15,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "patients")
 public class Patient {
     @Id
+    @GeneratedValue
     private String id;
     private String firstname;
     private String lastname;
